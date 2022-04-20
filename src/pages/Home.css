@@ -1,0 +1,129 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 70px);
+    overflow-y: scroll !important;
+}
+
+.intro {
+    color: #fff;
+    background-color: #000;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.prediction-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.prediction-button-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.prediction-button-link:hover {
+    background-color: rgb(0, 0, 0);
+    color: #00ddff
+}
+
+.divider {
+    width: 70%;
+    height: 4px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.service {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.service-button-link {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.service-button-link:hover {
+    text-decoration: none;
+    color: #00ddff;
+    cursor: pointer;
+}
+
+.news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    height: 296px;
+    width: 326px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.news-item-image {
+    width: 100%;
+    height: 150px;
+}
+
+.news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.news-item-content {
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+
+.news-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.news-title:hover {
+    color: #00ddff
+}
+
+.news-description {
+    font-size: 14px;
+    padding-top: 5px;
+    font-weight: 400;
+}
+
+h1 {
+    color: #c8ff00
+}

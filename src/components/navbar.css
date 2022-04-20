@@ -1,0 +1,106 @@
+.navbar {
+    display: flex;
+    height: 70px;
+    background: linear-gradient(to right, #00b09b, #96c93d);
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.site-name {
+    color: #fff;    
+    text-transform: uppercase;
+}
+
+.burgar-icon{
+    display: none;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+    margin-right: 20px;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 20px;
+}
+
+.btn{
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgb(210, 231, 16);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: rgb(216, 235, 50);
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar{
+        position: relative;
+    }  
+
+    .burgar-icon{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        width: 100vw;
+        height: 40vh;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-menu.active{
+        left: 0;
+        background: linear-gradient(to right, #00b09b, #96c93d);
+        border-top: 1px solid #fff;
+    }
+
+    .nav-item{
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+}
