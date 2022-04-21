@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import 'swiper/css'
+import REACT_APP_NEWS_API_KEY from '../credentials'
 import './Home.css'
-import 'swiper/css/autoplay'
+
 
 export const Home = () => {
-  const api_url = 'https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=33d63b7f6f6a42a9a1433c5b99fe6fce'
+  const api_url = `https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=${REACT_APP_NEWS_API_KEY}`
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const fetchData = async () => {
