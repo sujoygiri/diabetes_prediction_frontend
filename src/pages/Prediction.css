@@ -5,3 +5,13 @@
     background-color: #fff;
     /* overflow-y: scroll !important; */
 }
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+}
