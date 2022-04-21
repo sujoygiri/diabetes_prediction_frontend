@@ -1,0 +1,7 @@
+.prediction-container {
+    margin: 20px 10%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    /* overflow-y: scroll !important; */
+}

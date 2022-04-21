@@ -1,25 +1,13 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import REACT_APP_NEWS_API_KEY from '../credentials'
+import { useContext } from 'react';
+import GlobalContext from '../Context/GlobalContext';
 import './Home.css'
 
 
 export const Home = () => {
-  const api_url = `https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=${REACT_APP_NEWS_API_KEY}`
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
-  const fetchData = async () => {
-    const response = await fetch(api_url)
-    const response_data = await response.json()
-    setData(response_data.articles)
-    setLoading(false)
-  }
   
-  useEffect(() => {
-    if (loading) {
-      fetchData();
-    }
-  })
+  const { data } = useContext(GlobalContext);
+  
   // function randomNumber() {
   //   return Math.floor((Math.random() * 500) + 1)
   // }
@@ -30,7 +18,7 @@ export const Home = () => {
           <h1>Welcome To ML Based <span>Diabetic</span> Prediction Plartform</h1>
         </div>
         <div className="prediction-button">
-          <Link to="##" className='prediction-button-link'>Let's Go For Prediction</Link>
+          <Link to="/prediction" className='prediction-button-link'>Let's Go For Prediction</Link>
         </div>
         <hr className='divider' />
         <h1>Other Health Factors</h1>
@@ -53,7 +41,7 @@ export const Home = () => {
         <div className="news">
           {
             data.map((item, index) => {
-              return item.urlToImage && (
+              return (item.urlToImage && item.url && item.title && item.description) && (
                 <div className="news-item" key={index}>
                   <div className="news-item-image">
                     <img className='news-image' src={item.urlToImage} alt="news" />
