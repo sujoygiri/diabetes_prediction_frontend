@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="burgar-icon" onClick={handleClick}>
           <i className={`fas ${clicked ? 'fa-times' : 'fa-bars'}`} />
         </div>
-        <ul className={`${clicked ? 'nav-menu active' : 'nav-menu'}`}>
+        <ul className={`${clicked ? 'nav-menu active' : 'nav-menu'}`} onClick={handleClick}>
           <li className="nav-item">
             <NavLink className='nav-link' to="/">Home</NavLink>
           </li>
