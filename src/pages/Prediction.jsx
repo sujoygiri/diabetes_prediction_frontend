@@ -1,6 +1,20 @@
+import { useState } from 'react';
+import Modal from '../components/Modal';
 import './Prediction.css';
 
 const Prediction = () => {
+  const [result, setResult] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handelModal = () => {
+    if(result !== null) {
+      setIsOpen(true);
+    }
+    if(isOpen === true) {
+      setIsOpen(false);
+    }
+  }
+  
   const getPredictionValue = async (e) => {
     e.preventDefault();
     const url = "http://127.0.0.1:8000/api/prediction/";
@@ -19,6 +33,9 @@ const Prediction = () => {
       }),
     });
     let data = await response.json();
+    if(response.status === 200){
+      setResult(data[0]);
+    }
     console.log(data);
   }
 
@@ -34,7 +51,7 @@ const Prediction = () => {
               </div>
               <div className="form-element">
                 <label htmlFor="glucose-value" className='form-label'>Enter Glucose Value In Your Blood</label>
-                <input type="number" className="form-input" name="glucose" id="glucose-value" required />
+                <input type="number" className="form-input" name="glucose" id="glucose-value" maxLength={3} required={true} />
               </div>
               <div className="form-element">
                 <label htmlFor="blood-pressure-value" className='form-label'>Enter Your Blood Pressure Value</label>
@@ -57,11 +74,12 @@ const Prediction = () => {
                 <input type="number" className="form-input" name="age" id="age-value" required />
               </div>
               <div className="form-element">
-                <button type="submit" className='form-button'>Predict</button>
+                <button type="submit" className='form-button' onClick={handelModal}>Predict</button>
               </div>
             </div>
           </form>
         </div>
+        <Modal isOpen={isOpen} result={result} handelModal={handelModal}/>
       </div>
     </>
   )

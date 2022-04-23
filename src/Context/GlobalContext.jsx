@@ -14,7 +14,6 @@ export const GlobalProvider = ({ children }) => {
         const response_data = await response.json()
         setData(response_data.articles)
         setLoading(false)
-        console.log('Ia m here');
     }
 
     useEffect(() => {
