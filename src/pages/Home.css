@@ -16,55 +16,76 @@
     text-align: center;
 }
 
-.prediction-button {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    cursor: pointer;
-}
-
-.prediction-button-link {
+.intro a {
+    color: aqua;
     text-decoration: none;
-    color: #fff;
 }
 
-.prediction-button-link:hover {
-    background-color: rgb(0, 0, 0);
-    color: #00ddff
+.prediction-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 25px;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
 }
+
+.prediction-button:hover {
+    width: 60%;
+    background-color: #00ddff;
+    color: #fff;
+    box-shadow: rgb(0, 0, 0) 0px 25px 10px -10px;
+    transition: all ease-in-out .3s;
+}
+
 
 .divider {
     width: 70%;
     height: 4px;
     background-color: #fff;
-    margin-top: 10px;
+    margin: 20px 0;
 }
 
-.services {
+.services { 
+    margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    width: 400px;
 }
 
 .service {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 15px;
+    
+}
+
+.service:hover{
+    box-shadow: rgb(0, 0, 0) 0px 30px 20px -10px;
+    transition: all ease-in-out .4s;
 }
 
 .service-button-link {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .service-button-link:hover {
     text-decoration: none;
-    color: #00ddff;
+    color: #7424f3;
     cursor: pointer;
 }
 
@@ -136,6 +157,7 @@ h1 {
     color: #c8ff00
 }
 
+
 @media screen and (max-width: 1000px) {
     .container {
         height: calc(100vh - 70px);
@@ -144,6 +166,7 @@ h1 {
     .news {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -153,5 +176,23 @@ h1 {
 
     .news {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .prediction-button{
+        width: 70%;
+    }
+
+    .prediction-button:hover{
+        width: 80%;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        width: 60%;
     }
 }
