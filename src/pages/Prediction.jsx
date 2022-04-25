@@ -6,14 +6,6 @@ const Prediction = () => {
   const [result, setResult] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handelModal = () => {
-    if(result !== null) {
-      setIsOpen(true);
-    }
-    if(isOpen === true) {
-      setIsOpen(false);
-    }
-  }
   
   const getPredictionValue = async (e) => {
     e.preventDefault();
@@ -35,6 +27,7 @@ const Prediction = () => {
     let data = await response.json();
     if(response.status === 200){
       setResult(data[0]);
+      setIsOpen(true);
     }
     console.log(data);
   }
@@ -74,12 +67,12 @@ const Prediction = () => {
                 <input type="number" className="form-input" name="age" id="age-value" required />
               </div>
               <div className="form-element">
-                <button type="submit" className='form-button' onClick={handelModal}>Predict</button>
+                <button type="submit" className='form-button'>Predict</button>
               </div>
             </div>
           </form>
         </div>
-        <Modal isOpen={isOpen} result={result} handelModal={handelModal}/>
+        <Modal isOpen={isOpen} result={result} setIsOpen={setIsOpen}/>
       </div>
     </>
   )

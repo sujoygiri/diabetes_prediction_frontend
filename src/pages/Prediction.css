@@ -1,50 +1,67 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
-.container{
-
+.container {
     overflow-y: scroll !important;
 }
+
 .prediction-container {
     margin: 30px 0;
-    width: 70vw;
-    border: 1px solid #ccc;
+    width: 40vw;
+    box-shadow: rgb(0, 238, 218) 0px 50px 50px 20px;
     background-color: #fff;
+    border-radius: 20px;
 }
 
-.form-group{
+.form-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-.form-element{
+.form-element {
     display: flex;
     flex-direction: column;
-    margin: 0 15%;
+    margin: 20px 20px 0 20px;
+}
+
+.form-label {
+    font-weight: 600;
     margin-bottom: 10px;
-    padding: 10px;
 }
 
-.form-label{
-    font-weight: bold;
-    margin-bottom: 5px;
-    padding: 0px 10px 5px 4px;
-}
-
-.form-input{
+.form-input {
     height: 30px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px;
+    
 }
 
-/* .result{
-    
-} */
+.form-input:focus {
+    box-shadow: rgb(0, 0, 0) 0px 10px 15px -8px
+}
+
+.form-button {
+    margin: 20px 20%;
+    padding: 15px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .prediction-container {
+        width: 60vw;
+    }
+}
+@media screen and (max-width: 550px) {
+    .prediction-container {
+        width: 85vw;
+    }
+}

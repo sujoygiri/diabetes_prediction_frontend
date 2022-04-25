@@ -1,18 +1,17 @@
 import { createContext, useState, useEffect } from "react";
-import REACT_APP_NEWS_API_KEY from "../credentials";
 const GlobalContext = createContext();
 export default GlobalContext;
 
 export const GlobalProvider = ({ children }) => {
-    const api_url = `https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=${REACT_APP_NEWS_API_KEY}`;
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    
     const fetchData = async () => {
+        const api_url = `http://127.0.0.1:8000/api/fetch-news/`;
         const response = await fetch(api_url)
         const response_data = await response.json()
-        setData(response_data.articles)
+        setData(response_data)
         setLoading(false)
         console.log("i am here");
     }
