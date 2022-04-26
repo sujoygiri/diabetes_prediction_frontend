@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     height: calc(100vh - 70px);
-    overflow-y: scroll !important;
 }
 
 .intro {
@@ -52,7 +51,7 @@
     margin: 20px 0;
 }
 
-.services { 
+.services {
     margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -68,10 +67,10 @@
     background-color: #fff;
     height: 100px;
     border-radius: 15px;
-    
+
 }
 
-.service:hover{
+.service:hover {
     box-shadow: rgb(0, 0, 0) 0px 30px 20px -10px;
     transition: all ease-in-out .4s;
 }
@@ -159,9 +158,9 @@ h1 {
 
 
 @media screen and (max-width: 1000px) {
-    .container {
+    /* .container {
         height: calc(100vh - 70px);
-    }
+    } */
 
     .news {
         grid-template-columns: repeat(2, 1fr);
@@ -170,9 +169,9 @@ h1 {
 }
 
 @media screen and (max-width: 700px) {
-    .container {
+    /* .container {
         height: calc(100vh - 70px);
-    }
+    } */
 
     .news {
         grid-template-columns: repeat(1, 1fr);
@@ -181,11 +180,11 @@ h1 {
 }
 
 @media screen and (max-width: 500px) {
-    .prediction-button{
+    .prediction-button {
         width: 70%;
     }
 
-    .prediction-button:hover{
+    .prediction-button:hover {
         width: 80%;
     }
 

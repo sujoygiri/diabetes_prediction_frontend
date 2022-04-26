@@ -8,10 +8,6 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.container {
-    overflow-y: scroll !important;
-}
-
 .prediction-container {
     margin: 30px 0;
     width: 40vw;

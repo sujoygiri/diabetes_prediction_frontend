@@ -26,7 +26,7 @@ export const Home = () => {
         <h1>Other Health Factors</h1>
         <div className="services">
           <div className="service">
-            <Link to="##" className='service-button-link'>Calculate BMR</Link>
+            <Link to="/bmr" className='service-button-link'>Calculate BMR</Link>
           </div>
           <div className="service">
             <Link to="##" className='service-button-link'>Calculate BMR</Link>
@@ -38,8 +38,11 @@ export const Home = () => {
             <Link to="##" className='service-button-link'>Calculate BMR</Link>
           </div>
         </div>
-        <hr className='divider' />
-        <h1>Trending Health News</h1>
+        {data.length !== 0 && <>
+          <hr className='divider' />
+          <h1>Trending Health News</h1>
+        </>
+        }
         <div className="news">
           {
             data.map((item, index) => {
