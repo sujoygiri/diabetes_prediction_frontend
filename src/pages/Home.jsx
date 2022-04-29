@@ -16,6 +16,7 @@ export const Home = () => {
       <div className="container">
         <div className="intro">
           <h1>Welcome To ML Based <a href="http://www.google.com/search?q=diabetes" target="_blank" rel="noreferrer">Diabetes</a> Prediction Plartform</h1>
+          <p style={{'color':'red'}}>( This is a web application that <span>predicts</span> diabetes risk of a person not <span>detect</span> diabetes. )</p>
         </div>
         <Link to="/prediction" className='prediction-button'>
           <div>
@@ -29,7 +30,7 @@ export const Home = () => {
             <Link to="/bmr" className='service-button-link'>Calculate BMR</Link>
           </div>
           <div className="service">
-            <Link to="##" className='service-button-link'>Calculate BMR</Link>
+            <Link to="/bmi" className='service-button-link'>Calculate BMI</Link>
           </div>
           <div className="service">
             <Link to="##" className='service-button-link'>Calculate BMR</Link>

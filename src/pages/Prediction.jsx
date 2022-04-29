@@ -4,7 +4,7 @@ import './Prediction.css';
 
 const Prediction = () => {
   const [result, setResult] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [onClose, setOnClose] = useState(false);
 
   
   const getPredictionValue = async (e) => {
@@ -27,7 +27,7 @@ const Prediction = () => {
     let data = await response.json();
     if(response.status === 200){
       setResult(data[0]);
-      setIsOpen(true);
+      setOnClose(true);
     }
     console.log(data);
   }
@@ -72,7 +72,7 @@ const Prediction = () => {
             </div>
           </form>
         </div>
-        <Modal isOpen={isOpen} result={result} setIsOpen={setIsOpen}/>
+        {onClose && <Modal title={"Hello"} result={result} setOnClose={setOnClose}/>}
       </div>
     </>
   )

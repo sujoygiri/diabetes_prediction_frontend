@@ -5,6 +5,7 @@ import { GlobalProvider } from './Context/GlobalContext';
 import Navbar from './components/Navbar';
 import Prediction from './pages/Prediction';
 import Bmr from './pages/utilities/Bmr';
+import Bmi from './pages/utilities/Bmi';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/prediction" element={<Prediction />} />
           <Route path="/bmr" element={<Bmr />} />
+          <Route path="/bmi" element={<Bmi />} />
         </Routes>
       </GlobalProvider>
     </>

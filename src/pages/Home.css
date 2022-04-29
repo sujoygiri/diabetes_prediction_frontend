@@ -19,6 +19,11 @@
     text-decoration: none;
 }
 
+.intro p span {
+    text-decoration: underline;
+    text-decoration-color: aqua;
+}
+
 .prediction-button {
     display: flex;
     flex-direction: column;

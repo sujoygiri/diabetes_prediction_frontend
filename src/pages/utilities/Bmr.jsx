@@ -58,7 +58,7 @@ const Bmr = () => {
                         </form>
                     </div>
                 </div>
-                {onClose && <Modal title={"Hello"} children={`Your BMR is: ${bmr} Calories/day`} setOnClose={setOnClose}/>}
+                {onClose && <Modal title={"Hello"} result={`Your BMR is: ${bmr} Calories/day`} setOnClose={setOnClose}/>}
             </div>
         </>
     )

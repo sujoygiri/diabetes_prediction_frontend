@@ -12,7 +12,7 @@ const Modal = (props) => {
                         <h2>{props.title}</h2>
                     </div>
                     <div className="modal-body">
-                        {props.children}
+                        {props.rsult}
                     </div>
                     <div className="modal-footer">
                         <button onClick={() => props.setOnClose(false)}>Close</button>
