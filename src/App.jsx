@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
-import './App.css';
+// import './App.css';
 import { GlobalProvider } from './Context/GlobalContext';
 import Navbar from './components/Navbar';
 import Prediction from './pages/Prediction';

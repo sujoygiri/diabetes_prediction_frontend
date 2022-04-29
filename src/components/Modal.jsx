@@ -1,15 +1,24 @@
-import ModalReact from "react-modal"
 import "./Modal.css"
 
-ModalReact.setAppElement("#_root");
 const Modal = (props) => {
     return (
         <>
-            <ModalReact isOpen={props.isOpen} className="Modal" overlayClassName="Overlay">
-                {props.result === 1 && <h1>You are at risk of diabetes</h1>}
-                {props.result === 0 && <h1>You are not at risk of diabetes</h1>}
-                <button onClick={()=>props.setIsOpen(false)}>Close Result</button>
-            </ModalReact>
+            <div className="modal-container">
+                <div className="modal-content">
+                    <div className="modal-close-button">
+                        <button  onClick={() => props.setOnClose(false)}>X</button>
+                    </div>
+                    <div className="modal-header">
+                        <h2>{props.title}</h2>
+                    </div>
+                    <div className="modal-body">
+                        {props.children}
+                    </div>
+                    <div className="modal-footer">
+                        <button onClick={() => props.setOnClose(false)}>Close</button>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

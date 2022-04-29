@@ -10,10 +10,12 @@ export const GlobalProvider = ({ children }) => {
     const fetchData = async () => {
         const api_url = `http://127.0.0.1:8000/api/fetch-news/`;
         const response = await fetch(api_url)
-        const response_data = await response.json()
-        setData(response_data)
-        setLoading(false)
-        console.log("i am here");
+        if(response.status === 200){
+            const response_data = await response.json()
+            setData(response_data)
+            setLoading(false)
+            console.log("i am here");
+        }
     }
 
     useEffect(() => {
