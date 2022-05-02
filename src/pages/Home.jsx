@@ -33,10 +33,10 @@ export const Home = () => {
             <Link to="/bmi" className='service-button-link'>Calculate BMI</Link>
           </div>
           <div className="service">
-            <Link to="/ideal-weight-calculator" className='service-button-link'>Ideal Weight Calculator</Link>
+            <Link to="/ideal-weight" className='service-button-link'>Calculate IBW</Link>
           </div>
           <div className="service">
-            <Link to="##" className='service-button-link'>Calculate BMR</Link>
+            <Link to="/lean-body-mass" className='service-button-link'>Calculate LBM</Link>
           </div>
         </div>
         {data.length !== 0 && <>

@@ -1,0 +1,97 @@
+.lbm-container {
+    background-color: #fff;
+    width: 65vw;
+    padding: 10px 2%;
+    margin: 3%;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 10px; */
+}
+
+.info h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    text-shadow: rgb(253, 95, 245) 0px 0px 10px;
+}
+
+.info p{
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 0 3%;
+}
+
+.main {
+    display: flex;
+    padding: 0 3%;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* .main-field{
+    justify-content: left;
+} */
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+.input h3{
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.input-item{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+
+.input-item span{
+    transform: translate(88%,-100%);
+}
+
+.input-item-radio{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.input-item-radio span, input, label{
+    width: 100%;
+}
+
+.calculate{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.calculate button{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.result{
+    margin-left: 10%;
+    /* display: none; */
+}
+
+
+@media screen and (max-width: 600px) {
+    .lbm-container{
+        width: 95vw;
+        padding: 2%;
+        margin: 2%;
+    }
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Modal from '../../components/Modal';
-import './Ideal_weight.css'
+import './IdealWeight.css'
 
 const Ideal_weight = () => {
     const [idealBodyWeight, setIdealBodyWeight] = useState(null);
