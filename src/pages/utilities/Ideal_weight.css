@@ -1,4 +1,4 @@
-.bmi-container {
+.ibw-container {
     background-color: #fff;
     width: 65vw;
     padding: 10px 2%;
@@ -89,7 +89,7 @@
 
 
 @media screen and (max-width: 600px) {
-    .bmr-container{
+    .ibw-container{
         width: 95vw;
         padding: 2%;
         margin: 2%;

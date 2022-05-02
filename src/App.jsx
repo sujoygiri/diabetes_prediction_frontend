@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Prediction from './pages/Prediction';
 import Bmr from './pages/utilities/Bmr';
 import Bmi from './pages/utilities/Bmi';
+import Ideal_weight from './pages/utilities/Ideal_weight';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/prediction" element={<Prediction />} />
           <Route path="/bmr" element={<Bmr />} />
           <Route path="/bmi" element={<Bmi />} />
+          <Route path="/ideal-weight-calculator" element={<Ideal_weight />} />
         </Routes>
       </GlobalProvider>
     </>

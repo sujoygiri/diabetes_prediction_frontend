@@ -33,7 +33,7 @@ export const Home = () => {
             <Link to="/bmi" className='service-button-link'>Calculate BMI</Link>
           </div>
           <div className="service">
-            <Link to="##" className='service-button-link'>Calculate BMR</Link>
+            <Link to="/ideal-weight-calculator" className='service-button-link'>Ideal Weight Calculator</Link>
           </div>
           <div className="service">
             <Link to="##" className='service-button-link'>Calculate BMR</Link>
