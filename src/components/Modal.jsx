@@ -1,12 +1,16 @@
 import "./Modal.css"
 
 const Modal = (props) => {
+    const handelClick = () => {
+        props.setOnClose(false);
+        document.getElementById("prediction").classList.remove("hide");
+    }
     return (
         <>
             <div className="modal-container">
                 <div className="modal-content">
                     <div className="modal-close-button">
-                        <button  onClick={() => props.setOnClose(false)}>X</button>
+                        <button  onClick={handelClick}>X</button>
                     </div>
                     <div className="modal-header">
                         <h2>{props.title}</h2>
@@ -15,7 +19,7 @@ const Modal = (props) => {
                         {props.result}
                     </div>
                     <div className="modal-footer">
-                        <button onClick={() => props.setOnClose(false)}>Close</button>
+                        <button onClick={handelClick}>Close</button>
                     </div>
                 </div>
             </div>

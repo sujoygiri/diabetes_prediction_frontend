@@ -8,9 +8,6 @@ export const Home = () => {
 
   const { data } = useContext(GlobalContext);
 
-  // function randomNumber() {
-  //   return Math.floor((Math.random() * 500) + 1)
-  // }
   return (
     <>
       <div className="container">

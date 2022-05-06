@@ -28,14 +28,17 @@ const Prediction = () => {
     if(response.status === 200){
       setResult(data[0]);
       setOnClose(true);
+      document.getElementById("prediction").classList.add("hide");
     }
     console.log(data);
   }
 
+  
+
   return (
     <>
       <div className="container">
-        <div className="prediction-container">
+        <div className="prediction-container" id='prediction'>
           <form onSubmit={getPredictionValue}>
             <div className="form-group">
               <div className="form-element">
