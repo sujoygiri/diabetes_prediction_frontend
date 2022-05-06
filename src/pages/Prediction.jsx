@@ -26,7 +26,13 @@ const Prediction = () => {
     });
     let data = await response.json();
     if(response.status === 200){
-      setResult(data[0]);
+      var prediction_result = ''
+      if(data[0] === 1){
+        prediction_result = 'You are predicted to have diabetes';
+      }else{
+        prediction_result = 'You are predicted to not have diabetes';
+      }
+      setResult(prediction_result);
       setOnClose(true);
       document.getElementById("prediction").classList.add("hide");
     }
@@ -43,11 +49,11 @@ const Prediction = () => {
             <div className="form-group">
               <div className="form-element">
                 <label htmlFor="patient-name" className='form-label'>Enter your name</label>
-                <input type="text" className="form-input" placeholder="Enter your name" id='user-name' />
+                <input type="text" className="form-input" id='user-name' maxLength={20} minLength={4} required/>
               </div>
               <div className="form-element">
                 <label htmlFor="glucose-value" className='form-label'>Enter Glucose Value In Your Blood</label>
-                <input type="number" className="form-input" name="glucose" id="glucose-value" maxLength={3} required={true} />
+                <input type="number" className="form-input" name="glucose" id="glucose-value" maxLength={3} required />
               </div>
               <div className="form-element">
                 <label htmlFor="blood-pressure-value" className='form-label'>Enter Your Blood Pressure Value</label>
@@ -75,7 +81,7 @@ const Prediction = () => {
             </div>
           </form>
         </div>
-        {onClose && <Modal title={"Hello"} result={result} setOnClose={setOnClose}/>}
+        {onClose && <Modal title={"Hello, " + document.getElementById('user-name').value} result={result} setOnClose={setOnClose}/>}
       </div>
     </>
   )
