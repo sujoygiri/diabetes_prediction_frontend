@@ -1,14 +1,16 @@
 import { useState } from 'react';
+import Loading from '../components/Loading';
 import Modal from '../components/Modal';
 import './Prediction.css';
 
 const Prediction = () => {
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState(-1);
   const [onClose, setOnClose] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   
   const getPredictionValue = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const url = "http://127.0.0.1:8000/api/prediction/";
     let response = await fetch(url, {
       method: 'POST',
@@ -28,15 +30,15 @@ const Prediction = () => {
     if(response.status === 200){
       var prediction_result = ''
       if(data[0] === 1){
-        prediction_result = 'You are predicted to have diabetes';
+        prediction_result = 'You are predicted to have diabetes 😟😟😟';
       }else{
-        prediction_result = 'You are predicted to not have diabetes';
+        prediction_result = 'You are predicted to not have diabetes 🙂🙂🙂';
       }
+      setLoading(false);
       setResult(prediction_result);
       setOnClose(true);
       document.getElementById("prediction").classList.add("hide");
     }
-    console.log(data);
   }
 
   
@@ -53,7 +55,7 @@ const Prediction = () => {
               </div>
               <div className="form-element">
                 <label htmlFor="glucose-value" className='form-label'>Enter Glucose Value In Your Blood</label>
-                <input type="number" className="form-input" name="glucose" id="glucose-value" maxLength={3} required />
+                <input type="number" className="form-input" name="glucose" id="glucose-value" required />
               </div>
               <div className="form-element">
                 <label htmlFor="blood-pressure-value" className='form-label'>Enter Your Blood Pressure Value</label>
@@ -81,7 +83,8 @@ const Prediction = () => {
             </div>
           </form>
         </div>
-        {onClose && <Modal title={"Hello, " + document.getElementById('user-name').value} result={result} setOnClose={setOnClose}/>}
+        {loading && <Loading loading={loading}/>}
+        {onClose && <Modal title={"Hello, " + document.getElementById('user-name').value} result={result} setOnClose={setOnClose} hidingId={"prediction"}/>}
       </div>
     </>
   )

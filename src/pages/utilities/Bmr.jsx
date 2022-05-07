@@ -38,11 +38,11 @@ const Bmr = () => {
                                 </div>
                                 <div className="input-item">
                                     <label htmlFor="height">Height</label>
-                                    <input type="text" name="height" id="height" />
+                                    <input type="text" name="height" id="height" /><span>cm</span>
                                 </div>
                                 <div className="input-item">
                                     <label htmlFor="weight">Weight</label>
-                                    <input type="text" name="weight" id="weight" />
+                                    <input type="text" name="weight" id="weight" /><span>Kg</span>
                                 </div>
                                 <div className="input-item-radio">
                                     <span>Gender</span>

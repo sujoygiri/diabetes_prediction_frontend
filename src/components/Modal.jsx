@@ -1,9 +1,9 @@
 import "./Modal.css"
 
-const Modal = (props) => {
+const Modal = ({title, result, setOnClose, hidingId}) => {
     const handelClick = () => {
-        props.setOnClose(false);
-        document.getElementById("prediction").classList.remove("hide");
+        setOnClose(false);
+        document.getElementById(hidingId).classList.remove("hide");
     }
     return (
         <>
@@ -13,10 +13,10 @@ const Modal = (props) => {
                         <button  onClick={handelClick}>X</button>
                     </div>
                     <div className="modal-header">
-                        <h2>{props.title}</h2>
+                        <h2>{title}</h2>
                     </div>
                     <div className="modal-body">
-                        {props.result}
+                        {result}
                     </div>
                     <div className="modal-footer">
                         <button onClick={handelClick}>Close</button>

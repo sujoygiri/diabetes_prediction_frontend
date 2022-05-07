@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react';
 import GlobalContext from '../Context/GlobalContext';
 import './Home.css'
+import Loading from '../components/Loading';
 
 
 export const Home = () => {
 
-  const { data } = useContext(GlobalContext);
-
+  const { data, dataLoading } = useContext(GlobalContext);
+  
   return (
     <>
       <div className="container">
@@ -41,6 +42,7 @@ export const Home = () => {
           <h1>Trending Health News</h1>
         </>
         }
+        {dataLoading && <Loading loading={dataLoading}/> }
         <div className="news">
           {
             data.map((item, index) => {

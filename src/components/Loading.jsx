@@ -1,9 +1,12 @@
 import { HashLoader } from "react-spinners";
+import './Loading.css';
 
 const Loading = ({loading}) => {
   return (
     <>
-    <HashLoader color="#1ed9d3" loading={loading}/>
+    <div className="sweet-loading">
+      <HashLoader color="red" loading={loading}/>
+    </div>
     </>
   )
 }
