@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Prediction from './pages/Prediction';
 import Bmr from './pages/utilities/Bmr';
 import Bmi from './pages/utilities/Bmi';
-import Ideal_weight from './pages/utilities/IdealWeight';
+import IdealWeight from './pages/utilities/IdealWeight';
 import LeanBodyMass from './pages/utilities/LeanBodyMass';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
@@ -23,7 +23,7 @@ function App() {
           <Route path="/prediction" element={<Prediction />} />
           <Route path="/bmr" element={<Bmr />} />
           <Route path="/bmi" element={<Bmi />} />
-          <Route path="/ideal-weight" element={<Ideal_weight />} />
+          <Route path="/ideal-weight" element={<IdealWeight />} />
           <Route path="/lean-body-mass" element={<LeanBodyMass />} />
         </Routes>
       </GlobalProvider>

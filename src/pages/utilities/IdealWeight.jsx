@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Modal from '../../components/Modal';
 import './IdealWeight.css'
 
-const Ideal_weight = () => {
+const IdealWeight = () => {
     const [idealBodyWeight, setIdealBodyWeight] = useState(null);
     const [onClose, setOnClose] = useState(false);
 
@@ -70,4 +70,4 @@ const Ideal_weight = () => {
     );
 }
 
-export default Ideal_weight;
+export default IdealWeight;

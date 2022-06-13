@@ -8,22 +8,25 @@ const ContactUs = () => {
     const [onClose, setOnClose] = useState(false);
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
+    const [name, setName] = useState('');
 
     const sendEmail = async (e) => {
         e.preventDefault();
+        setName(e.target.name.value);
         setLoading(true);
         const response = await emailjs.sendForm('service_s25lns8', 'template_wopc3lb', e.target, 'OMzn91tFGyx7WH2_k');
         document.getElementById("contact-container").classList.add("hide");
         setLoading(false);
         if (response.status === 200) {
             setOnClose(true);
-            setMessage('Email send successfully');
+            setMessage('Thank you for contacting us. We will get back to you soon.');
         } else {
             setOnClose(true);
-            setMessage('Email not send successfully');
+            setMessage('Something went wrong. Please try again later.');
         }
         document.getElementById("contact-us-form").reset();
     }
+
     return (
         <>
             <div className="contact" id='contact-container'>
@@ -44,7 +47,7 @@ const ContactUs = () => {
                 </div>
             </div>
             {loading && <Loading loading={loading}/>}
-            {onClose && <Modal title={"Hello"} result={message} setOnClose={setOnClose} hidingId={"contact-container"} />}
+            {onClose && <Modal title={"Hello " + name} result={message} setOnClose={setOnClose} hidingId={"contact-container"} />}
         </>
     )
 }

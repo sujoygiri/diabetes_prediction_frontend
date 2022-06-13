@@ -38,11 +38,10 @@ input[type=number] {
 }
 
 .form-input {
-    height: 30px;
+    height: 40px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
-    
 }
 
 .form-input:focus {

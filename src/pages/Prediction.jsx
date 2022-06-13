@@ -7,7 +7,7 @@ const Prediction = () => {
   const [result, setResult] = useState(-1);
   const [onClose, setOnClose] = useState(false);
   const [loading, setLoading] = useState(false);
-  
+
   const getPredictionValue = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -18,21 +18,21 @@ const Prediction = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        glucose:e.target.glucose.value,
-        blood_pressure:e.target.blood_pressure.value,
-        skin_thickness:e.target.skin_thickness.value,
-        insulin:e.target.insulin.value,
-        bmi:e.target.bmi.value,
-        age:e.target.age.value,
+        glucose: e.target.glucose.value,
+        blood_pressure: e.target.blood_pressure.value,
+        skin_thickness: e.target.skin_thickness.value,
+        insulin: e.target.insulin.value,
+        bmi: e.target.bmi.value,
+        age: e.target.age.value,
       }),
     });
     let data = await response.json();
-    if(response.status === 200){
+    if (response.status === 200) {
       var prediction_result = ''
-      if(data[0] === 1){
-        prediction_result = 'You are predicted to have diabetes 😟😟😟';
-      }else{
-        prediction_result = 'You are predicted to not have diabetes 🙂🙂🙂';
+      if (data[0] === 1) {
+        prediction_result = 'Sorry to say but you have diabetes 😟😟😟';
+      } else {
+        prediction_result = 'Congrats you do not have diabetes 🙂🙂🙂';
       }
       setLoading(false);
       setResult(prediction_result);
@@ -40,8 +40,6 @@ const Prediction = () => {
       document.getElementById("prediction").classList.add("hide");
     }
   }
-
-  
 
   return (
     <>
@@ -51,7 +49,7 @@ const Prediction = () => {
             <div className="form-group">
               <div className="form-element">
                 <label htmlFor="patient-name" className='form-label'>Enter your name</label>
-                <input type="text" className="form-input" id='user-name' maxLength={20} minLength={4} required/>
+                <input type="text" className="form-input" id='user-name' maxLength={20} minLength={3} required />
               </div>
               <div className="form-element">
                 <label htmlFor="glucose-value" className='form-label'>Enter Glucose Value In Your Blood</label>
@@ -71,7 +69,7 @@ const Prediction = () => {
               </div>
               <div className="form-element">
                 <label htmlFor="bmi-value" className='form-label'>Enter Your BMI Value</label>
-                <input type="number" className="form-input" name="bmi" id="bmi-value" step="0.01"  required />
+                <input type="number" className="form-input" name="bmi" id="bmi-value" step="0.01" required />
               </div>
               <div className="form-element">
                 <label htmlFor="age-value" className='form-label'>Enter Your Age</label>
@@ -83,8 +81,8 @@ const Prediction = () => {
             </div>
           </form>
         </div>
-        {loading && <Loading loading={loading}/>}
-        {onClose && <Modal title={"Hello, " + document.getElementById('user-name').value} result={result} setOnClose={setOnClose} hidingId={"prediction"}/>}
+        {loading && <Loading loading={loading} />}
+        {onClose && <Modal title={"Hello, " + document.getElementById('user-name').value} result={result} setOnClose={setOnClose} hidingId={"prediction"} />}
       </div>
     </>
   )
